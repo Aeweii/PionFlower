@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Доставка — PionFlower</title>
+    <link rel="stylesheet" href="delivery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="PionFlower" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">PionFlower<span>студия цветов</span></div>
+            </div>
+            <div class="burger-menu" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="profile-section" id="profileSection"></div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="main.html" class="mobile-link">Главная</a>
+            <a href="catalog.html" class="mobile-link">Каталог</a>
+            <a href="delivery.html" class="mobile-link active">Доставка</a>
+            <a href="contacts.html" class="mobile-link">Контакты</a>
+            <a href="profile.html" class="mobile-link">Личный кабинет</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Доставка цветов</h1>
+            <p>по Альметьевску от 1–2 часов</p>
+        </section>
+
+        <section class="container">
+            <!-- Преимущества -->
+            <div class="info-block">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <img src="img/shopping-cart.svg" alt="Бесплатно">
+                    </div>
+                    <div>
+                        <h3>Бесплатно</h3>
+                        <p>при заказе от 3000 ₽</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <img src="img/clock.svg" alt="Быстрая доставка">
+                    </div>
+                    <div>
+                        <h3>1–2 часа</h3>
+                        <p>среднее время доставки</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <img src="img/credit-card.svg" alt="Оплата">
+                    </div>
+                    <div>
+                        <h3>Оплата онлайн</h3>
+                        <p>или курьеру</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Калькулятор доставки -->
+            <div class="calc-block">
+                <h2>Рассчитать доставку</h2>
+                <form id="deliveryForm" class="calc-form">
+                    <select id="deliveryZone" class="calc-select" required>
+                        <option value="">Выберите район</option>
+                        <option value="center">Центр (Ленина, Советская, Гагарина)</option>
+                        <option value="west">Западный (микрорайон Западный)</option>
+                        <option value="east">Восточный (микрорайон Восточный)</option>
+                        <option value="north">Северный (микрорайон Северный)</option>
+                        <option value="south">Южный (микрорайон Южный)</option>
+                        <option value="urban">Городок нефтяников</option>
+                        <option value="dzhalil">пгт Джалиль</option>
+                    </select>
+                    <input type="number" id="orderAmount" placeholder="Сумма заказа (₽)" class="calc-input">
+                    <button type="submit" class="calc-btn">Рассчитать</button>
+                </form>
+                <div id="calcResult" class="calc-result" style="display: none;"></div>
+            </div>
+
+            <!-- Стоимость по районам -->
+            <div class="price-block">
+                <h2>Стоимость доставки</h2>
+                <div class="price-list">
+                    <div class="price-row">
+                        <span>Центр (Ленина, Советская, Гагарина)</span>
+                        <span>200 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Западный, Восточный, Северный, Южный</span>
+                        <span>300 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Городок нефтяников</span>
+                        <span>350 ₽</span>
+                    </div>
+                    <div class="price-row">
+                        <span>пгт Джалиль</span>
+                        <span>500 ₽</span>
+                    </div>
+                    <div class="price-row highlight">
+                        <span>При заказе от 3000 ₽</span>
+                        <span>Бесплатно</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Самовывоз -->
+            <div class="pickup-block">
+                <h2>Самовывоз</h2>
+                <p>г. Альметьевск, ул. Ленина, д. 43</p>
+                <p>Ежедневно: 10:00 – 21:00</p>
+                <button class="btn-route" id="routeBtn">Построить маршрут</button>
+            </div>
+
+            <!-- Частые вопросы -->
+            <div class="faq-block">
+                <h2>Частые вопросы</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Доставляете ли вы в выходные?</span>
+                        <button class="faq-toggle">+</button>
+                    </div>
+                    <div class="faq-answer">Да, мы работаем и доставляем цветы ежедневно без выходных с 10:00 до 21:00.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли на определенное время?</span>
+                        <button class="faq-toggle">+</button>
+                    </div>
+                    <div class="faq-answer">Да, при оформлении заказа вы можете указать желаемое время. Мы постараемся доставить точно в срок.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Что если получателя нет дома?</span>
+                        <button class="faq-toggle">+</button>
+                    </div>
+                    <div class="faq-answer">Курьер позвонит получателю. Если не дозвонится, свяжемся с вами для согласования переноса доставки.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Как оплатить доставку?</span>
+                        <button class="faq-toggle">+</button>
+                    </div>
+                    <div class="faq-answer">Вы можете оплатить онлайн на сайте картой или наличными/картой курьеру при получении.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Доставляете ли вы в пгт Джалиль?</span>
+                        <button class="faq-toggle">+</button>
+                    </div>
+                    <div class="faq-answer">Да, доставляем в пгт Джалиль. Стоимость доставки — 500 ₽, время доставки — 2-3 часа.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно открытку к букету?</span>
+                        <button class="faq-toggle">+</button>
+                    </div>
+                    <div class="faq-answer">Да, мы бесплатно вложим открытку с вашим текстом. Напишите пожелание при оформлении заказа.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="PionFlower" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">PionFlower</div>
+            </div>
+            <div class="footer-copyright">© 2026, цветочная студия «PionFlower»</div>
+            <div class="footer-contacts">
+                <a href="tel:+78553123456">+7 (8553) 12-34-56</a>
+                <a href="mailto:PionFlower@gmail.com">PionFlower@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="delivery.js"></script>
+    <script src="auth.js"></script>
+    <script>
+// Админ-панель - добавьте к URL ?admin=secret
+if (window.location.search.includes('admin=secret')) {
+    window.location.href = 'admin.html';
+}
+</script>
+</body>
+</html>

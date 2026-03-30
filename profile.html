@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Личный кабинет — PionFlower</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="PionFlower" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">PionFlower<span>студия цветов</span></div>
+            </div>
+            <div class="burger-menu" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="profile-section" id="profileSection"></div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="main.html" class="mobile-link">Главная</a>
+            <a href="catalog.html" class="mobile-link">Каталог</a>
+            <a href="delivery.html" class="mobile-link">Доставка</a>
+            <a href="contacts.html" class="mobile-link">Контакты</a>
+            <a href="profile.html" class="mobile-link active">Личный кабинет</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Баннер профиля -->
+        <section class="profile-hero">
+            <div class="profile-avatar-container">
+                <div class="profile-avatar-large" id="profileAvatar">
+                    <img src="img/userrr.svg" alt="Фото профиля" class="profile-photo" id="profilePhoto" onerror="this.style.display='none'; this.parentElement.style.background='#ffdbd3';">
+                </div>
+                <button class="change-photo-btn" id="changePhotoBtn">
+                    <img src="img/cameraa.png" alt="">
+                </button>
+            </div>
+            <h1 id="profileName">Имя пользователя</h1>
+            <p class="profile-phone" id="profilePhone">+7 (XXX) XXX-XX-XX</p>
+        </section>
+
+        <div class="container">
+            <!-- Табы для переключения -->
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="cart">Корзина</button>
+                <button class="tab-btn" data-tab="delivery">Калькулятор доставки</button>
+                <button class="tab-btn" data-tab="orders">Мои заказы</button>
+            </div>
+
+            <!-- Вкладка Корзина с калькулятором -->
+            <div class="tab-content active" id="cartTab">
+                <div class="cart-container">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Корзина будет заполняться через JS -->
+                    </div>
+                    
+                    <!-- Блок итогов и калькулятора доставки -->
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Товаров:</span>
+                            <span id="cartTotalItems">0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Сумма заказа:</span>
+                            <span id="cartTotalPrice">0 ₽</span>
+                        </div>
+                        
+                        <!-- Калькулятор доставки в корзине -->
+                        <div class="delivery-calculator-inline">
+                            <h3>Доставка</h3>
+                            <div class="delivery-zone-select">
+                                <label for="cartDeliveryZone">Выберите район:</label>
+                                <select id="cartDeliveryZone" class="calc-select-small">
+                                    <option value="center">Центр — 200 ₽</option>
+                                    <option value="west">Западный — 300 ₽</option>
+                                    <option value="east">Восточный — 300 ₽</option>
+                                    <option value="north">Северный — 300 ₽</option>
+                                    <option value="south">Южный — 300 ₽</option>
+                                    <option value="urban">Городок нефтяников — 350 ₽</option>
+                                    <option value="dzhalil">пгт Джалиль — 500 ₽</option>
+                                </select>
+                            </div>
+                            
+                            <div class="delivery-price-info" id="deliveryPriceInfo">
+                                <div class="delivery-cost">
+                                    <span>Стоимость доставки:</span>
+                                    <span id="deliveryCostDisplay">0 ₽</span>
+                                </div>
+                                <div class="free-delivery-note" id="freeDeliveryNote" style="display: none;">
+                                    Бесплатная доставка! (при заказе от 3000 ₽)
+                                </div>
+                                <div class="need-more-note" id="needMoreNote" style="display: none;">
+                                    До бесплатной доставки не хватает <span id="needMoreAmount">0</span> ₽
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-row total-row">
+                            <span>Итого к оплате:</span>
+                            <span id="cartTotalWithDelivery">0 ₽</span>
+                        </div>
+                        
+                        <button class="checkout-btn" id="checkoutBtn">Оформить заказ</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка Отдельный калькулятор доставки -->
+            <div class="tab-content" id="deliveryTab">
+                <div class="calc-block">
+                    <h2>Калькулятор доставки</h2>
+                    <form id="deliveryForm" class="calc-form">
+                        <select id="deliveryZone" class="calc-select" required>
+                            <option value="">Выберите район</option>
+                            <option value="center">Центр (Ленина, Советская, Гагарина)</option>
+                            <option value="west">Западный (микрорайон Западный)</option>
+                            <option value="east">Восточный (микрорайон Восточный)</option>
+                            <option value="north">Северный (микрорайон Северный)</option>
+                            <option value="south">Южный (микрорайон Южный)</option>
+                            <option value="urban">Городок нефтяников</option>
+                            <option value="dzhalil">пгт Джалиль</option>
+                        </select>
+                        <input type="number" id="orderAmount" placeholder="Сумма заказа (₽)" class="calc-input">
+                        <button type="submit" class="calc-btn">Рассчитать</button>
+                    </form>
+                    <div id="calcResult" class="calc-result" style="display: none;"></div>
+                </div>
+                
+                <div class="price-block">
+                    <h2>Тарифы доставки</h2>
+                    <div class="price-list">
+                        <div class="price-row">
+                            <span>Центр</span>
+                            <span>200 ₽</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Западный, Восточный, Северный, Южный</span>
+                            <span>300 ₽</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Городок нефтяников</span>
+                            <span>350 ₽</span>
+                        </div>
+                        <div class="price-row">
+                            <span>пгт Джалиль</span>
+                            <span>500 ₽</span>
+                        </div>
+                        <div class="price-row highlight">
+                            <span>Бесплатная доставка</span>
+                            <span>от 3000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка Мои заказы -->
+            <div class="tab-content" id="ordersTab">
+                <div class="orders-list" id="ordersList">
+                    <div class="empty-orders">
+                        <div class="empty-image"></div>
+                        <p>У вас пока нет заказов</p>
+                        <a href="catalog.html" class="btn-catalog">Перейти в каталог</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="PionFlower" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">PionFlower</div>
+            </div>
+            <div>© 2026, цветочная студия «PionFlower»</div>
+            <div>
+                <a href="tel:+78553123456">+7 (8553) 12-34-56</a><br>
+                <a href="mailto:PionFlower@gmail.com">PionFlower@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="profile.js"></script>
+    <script src="auth.js"></script>
+    <script>
+// Админ-панель - добавьте к URL ?admin=secret
+if (window.location.search.includes('admin=secret')) {
+    window.location.href = 'admin.html';
+}
+</script>
+</body>
+</html>

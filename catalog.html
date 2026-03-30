@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Каталог букетов — PionFlower</title>
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="PionFlower" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">PionFlower<span>студия цветов</span></div>
+            </div>
+            <div class="burger-menu" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="profile-section" id="profileSection"></div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="main.html" class="mobile-link">Главная</a>
+            <a href="catalog.html" class="mobile-link">Каталог</a>
+            <a href="delivery.html" class="mobile-link">Доставка</a>
+            <a href="contacts.html" class="mobile-link">Контакты</a>
+            <a href="profile.html" class="mobile-link">Личный кабинет</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="catalog-hero">
+            <div class="container">
+                <h1>Каталог букетов</h1>
+                <p>Свежие цветы и авторские композиции с доставкой по Альметьевску</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="catalog-controls">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="author">Авторские</button>
+                    <button class="filter-btn" data-filter="wedding">Свадебные</button>
+                    <button class="filter-btn" data-filter="corporate">Корпоративные</button>
+                    <button class="filter-btn" data-filter="mono">Монобукеты</button>
+                </div>
+                <div class="sort-group">
+                    <label for="sort">Сортировка:</label>
+                    <select id="sort" class="sort-select">
+                        <option value="popular">По популярности</option>
+                        <option value="price-asc">Сначала дешевле</option>
+                        <option value="price-desc">Сначала дороже</option>
+                        <option value="new">Новинки</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="catalog-grid" id="catalogGrid"></div>
+
+            <div class="pagination" id="pagination"></div>
+        </section>
+
+        <section class="container">
+            <div class="promo-banner">
+                <div class="promo-content">
+                    <h3>Бесплатная доставка</h3>
+                    <p>При заказе от 3000₽ — привезём букет бесплатно</p>
+                    <a href="delivery.html" class="promo-btn">Подробнее</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="PionFlower" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">PionFlower</div>
+            </div>
+            <div class="footer-copyright">© 2026, цветочная студия «PionFlower»</div>
+            <div class="footer-contacts">
+                <a href="tel:+78553123456">+7 (8553) 12-34-56</a>
+                <a href="mailto:PionFlower@gmail.com">PionFlower@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="catalog.js"></script>
+    <script src="auth.js"></script>
+    <script>
+// Админ-панель - добавьте к URL ?admin=secret
+if (window.location.search.includes('admin=secret')) {
+    window.location.href = 'admin.html';
+}
+</script>
+</body>
+</html>
