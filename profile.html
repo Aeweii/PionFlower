@@ -4,27 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Личный кабинет — PionFlower</title>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/dark-theme.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- ШАПКА САЙТА -->
     <header class="header">
         <div class="header-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="img/logo.png" alt="PionFlower" class="logo-img" onerror="this.style.display='none'">
+                    <a href="main.html"><img src="./media/img/logo.png" alt="PionFlower" class="logo-img" /></a>
                 </div>
                 <div class="logo-text">PionFlower<span>студия цветов</span></div>
             </div>
-            <div class="burger-menu" id="burger">
+
+            <!-- НАВИГАЦИЯ  -->
+            <nav class="nav" id="navMenu">
+                <a href="main.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link">Каталог</a>
+                <a href="delivery.html" class="nav-link">Доставка</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </nav>
+
+            <!-- БУРГЕР-МЕНЮ -->
+            <button class="burger-menu" id="burgerMenu" aria-label="Меню">
                 <span></span>
                 <span></span>
                 <span></span>
+            </button>
+
+            <!-- ПРАВАЯ ЧАСТЬ ШАПКИ -->
+            <div class="header-right">
+                <div class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="cart-icon-header" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count-badge" id="cartCount">0</span>
+                </div>
+                <div class="profile-section" id="profileSection"></div>
             </div>
-            <div class="profile-section" id="profileSection"></div>
         </div>
+
+        <!-- МОБИЛЬНОЕ МЕНЮ -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="main.html" class="mobile-link">Главная</a>
             <a href="catalog.html" class="mobile-link">Каталог</a>
@@ -39,14 +66,17 @@
         <section class="profile-hero">
             <div class="profile-avatar-container">
                 <div class="profile-avatar-large" id="profileAvatar">
-                    <img src="img/userrr.svg" alt="Фото профиля" class="profile-photo" id="profilePhoto" onerror="this.style.display='none'; this.parentElement.style.background='#ffdbd3';">
+                    <img src="./media/icon/userrr.svg" alt="Фото профиля" class="profile-photo" id="profilePhoto" onerror="this.style.display='none'; this.parentElement.style.background='#ffdbd3';">
                 </div>
                 <button class="change-photo-btn" id="changePhotoBtn">
-                    <img src="img/cameraa.png" alt="">
+                    <i class="fas fa-camera"></i>
                 </button>
             </div>
             <h1 id="profileName">Имя пользователя</h1>
             <p class="profile-phone" id="profilePhone">+7 (XXX) XXX-XX-XX</p>
+            <button class="logout-btn-header" id="logoutBtnHeader">
+                <i class="fas fa-sign-out-alt"></i> Выйти
+            </button>
         </section>
 
         <div class="container">
@@ -57,14 +87,11 @@
                 <button class="tab-btn" data-tab="orders">Мои заказы</button>
             </div>
 
-            <!-- Вкладка Корзина с калькулятором -->
+            <!-- Вкладка Корзина -->
             <div class="tab-content active" id="cartTab">
                 <div class="cart-container">
-                    <div class="cart-items" id="cartItems">
-                        <!-- Корзина будет заполняться через JS -->
-                    </div>
+                    <div class="cart-items" id="cartItems"></div>
                     
-                    <!-- Блок итогов и калькулятора доставки -->
                     <div class="cart-summary">
                         <div class="summary-row">
                             <span>Товаров:</span>
@@ -75,7 +102,6 @@
                             <span id="cartTotalPrice">0 ₽</span>
                         </div>
                         
-                        <!-- Калькулятор доставки в корзине -->
                         <div class="delivery-calculator-inline">
                             <h3>Доставка</h3>
                             <div class="delivery-zone-select">
@@ -97,10 +123,10 @@
                                     <span id="deliveryCostDisplay">0 ₽</span>
                                 </div>
                                 <div class="free-delivery-note" id="freeDeliveryNote" style="display: none;">
-                                    Бесплатная доставка! (при заказе от 3000 ₽)
+                                    <i class="fas fa-check-circle"></i> Бесплатная доставка! (при заказе от 3000 ₽)
                                 </div>
                                 <div class="need-more-note" id="needMoreNote" style="display: none;">
-                                    До бесплатной доставки не хватает <span id="needMoreAmount">0</span> ₽
+                                    <i class="fas fa-truck"></i> До бесплатной доставки не хватает <span id="needMoreAmount">0</span> ₽
                                 </div>
                             </div>
                         </div>
@@ -115,7 +141,7 @@
                 </div>
             </div>
 
-            <!-- Вкладка Отдельный калькулятор доставки -->
+            <!-- Вкладка Калькулятор доставки -->
             <div class="tab-content" id="deliveryTab">
                 <div class="calc-block">
                     <h2>Калькулятор доставки</h2>
@@ -139,79 +165,106 @@
                 <div class="price-block">
                     <h2>Тарифы доставки</h2>
                     <div class="price-list">
-                        <div class="price-row">
-                            <span>Центр</span>
-                            <span>200 ₽</span>
-                        </div>
-                        <div class="price-row">
-                            <span>Западный, Восточный, Северный, Южный</span>
-                            <span>300 ₽</span>
-                        </div>
-                        <div class="price-row">
-                            <span>Городок нефтяников</span>
-                            <span>350 ₽</span>
-                        </div>
-                        <div class="price-row">
-                            <span>пгт Джалиль</span>
-                            <span>500 ₽</span>
-                        </div>
-                        <div class="price-row highlight">
-                            <span>Бесплатная доставка</span>
-                            <span>от 3000 ₽</span>
-                        </div>
+                        <div class="price-row"><span>Центр</span><span>200 ₽</span></div>
+                        <div class="price-row"><span>Западный, Восточный, Северный, Южный</span><span>300 ₽</span></div>
+                        <div class="price-row"><span>Городок нефтяников</span><span>350 ₽</span></div>
+                        <div class="price-row"><span>пгт Джалиль</span><span>500 ₽</span></div>
+                        <div class="price-row highlight"><span>Бесплатная доставка</span><span>от 3000 ₽</span></div>
                     </div>
                 </div>
             </div>
 
             <!-- Вкладка Мои заказы -->
             <div class="tab-content" id="ordersTab">
-                <div class="orders-list" id="ordersList">
-                    <div class="empty-orders">
-                        <div class="empty-image"></div>
-                        <p>У вас пока нет заказов</p>
-                        <a href="catalog.html" class="btn-catalog">Перейти в каталог</a>
-                    </div>
-                </div>
+                <div class="orders-list" id="ordersList"></div>
             </div>
         </div>
-    </footer>
+    </main>
 
+    <!-- ПОДВАЛ -->
     <footer class="footer">
         <div class="container footer-content">
-            <div class="logo">
+            <div class="footer-logo">
                 <div class="logo-icon">
-                    <img src="img/logo.png" alt="PionFlower" class="logo-img" onerror="this.style.display='none'">
+                    <img src="./media/img/logo.png" alt="PionFlower" class="logo-img" />
                 </div>
                 <div class="logo-text">PionFlower</div>
             </div>
-            <div>© 2026, цветочная студия «PionFlower»</div>
-            <div>
-                <a href="tel:+78553123456">+7 (8553) 12-34-56</a><br>
+            <div class="footer-copyright">
+                © 2026, цветочная студия «PionFlower»
+            </div>
+            <div class="footer-contacts">
+                <a href="tel:+78553123456">+7 (8553) 12-34-56</a>
                 <a href="mailto:PionFlower@gmail.com">PionFlower@gmail.com</a>
             </div>
         </div>
     </footer>
 
-    <script src="profile.js"></script>
-    <script src="auth.js"></script>
-    <script>
-// Админ-панель - добавьте к URL ?admin=secret
-if (window.location.search.includes('admin=secret')) {
-    window.location.href = 'admin.html';
-}
-</script>
-        <!-- BEGIN PLERDY CODE -->
-<script type="text/javascript" defer data-plerdy_code='1'>
-    var _protocol="https:"==document.location.protocol?"https://":"http://";
-    _site_hash_code = "38b5a58e48b7db2488c2d80ad9d344cd",_suid=74715, plerdyScript=document.createElement("script");
-    plerdyScript.setAttribute("defer",""),plerdyScript.dataset.plerdymainscript="plerdymainscript",
-    plerdyScript.src="https://a.plerdy.com/public/js/click/main.js?v="+Math.random();
-    var plerdymainscript=document.querySelector("[data-plerdymainscript='plerdymainscript']");
-    plerdymainscript&&plerdymainscript.parentNode.removeChild(plerdymainscript);
-    try{document.head.appendChild(plerdyScript)}catch(t){console.log(t,"unable add script tag")}
-</script>
-<!-- END PLERDY CODE -->
+    <!-- МОДАЛЬНОЕ ОКНО ВХОДА -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Вход в личный кабинет</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginFormModal">
+                    <div class="form-group">
+                        <input type="text" id="loginName" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="loginPhone" placeholder="Номер телефона" required>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Войти</button>
+                    <p class="modal-hint">Введите имя и номер телефона для входа</p>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <!-- МОДАЛЬНОЕ ОКНО КОРЗИНЫ -->
+    <div class="modal cart-modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <button class="modal-close" id="closeCartBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items-list" id="cartItemsList"></div>
+                <div class="cart-summary-modal">
+                    <div class="summary-row">
+                        <span>Товаров (<span id="cartModalTotalItems">0</span>):</span>
+                        <span id="cartModalSubtotal">0 ₽</span>
+                    </div>
+                    <div class="delivery-selector">
+                        <label>Район доставки:</label>
+                        <select id="cartDeliveryZoneSelect" class="delivery-select">
+                            <option value="center">Центр — 200 ₽</option>
+                            <option value="west">Западный — 300 ₽</option>
+                            <option value="east">Восточный — 300 ₽</option>
+                            <option value="north">Северный — 300 ₽</option>
+                            <option value="south">Южный — 300 ₽</option>
+                            <option value="urban">Городок нефтяников — 350 ₽</option>
+                            <option value="dzhalil">пгт Джалиль — 500 ₽</option>
+                        </select>
+                    </div>
+                    <div class="free-delivery-note" id="cartModalFreeNote" style="display: none;"></div>
+                    <div class="summary-row delivery-row">
+                        <span>Доставка:</span>
+                        <span id="cartModalDelivery">0 ₽</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Итого:</span>
+                        <span id="cartModalTotal">0 ₽</span>
+                    </div>
+                    <button class="checkout-btn" id="modalCheckoutBtn">Оформить заказ</button>
+                    <button class="continue-shopping-btn" id="continueShoppingBtn">Продолжить покупки</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="/js/profile.js"></script>
+    <script src="/js/auth.js"></script>
 </body>
 </html>

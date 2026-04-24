@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>PionFlower — Админ-панель</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
+
 <body>
     <div class="admin-container">
         <!-- Шапка админки -->
@@ -16,14 +20,21 @@
             <div class="admin-header-top">
                 <div class="admin-logo">
                     <div class="logo-icon">
-                        <img src="img/logo.png" alt="PionFlower" onerror="this.style.display='none'">
+                        <img src="./media/img/logo.png" alt="PionFlower" onerror="this.style.display='none'">
                     </div>
                     <div class="logo-text">
                         PionFlower
                         <span>админ-панель</span>
                     </div>
                 </div>
-                <button class="admin-close-btn" id="closeAdminBtn">✕</button>
+
+                <div class="admin-actions">
+                    <div class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <button class="admin-close-btn" id="closeAdminBtn">✕</button>
+                </div>
             </div>
             <div class="admin-stats">
                 <div class="stat-card">
@@ -107,19 +118,7 @@
         </div>
     </div>
 
-    <script src="admin.js"></script>
-<!-- BEGIN PLERDY CODE -->
-<script type="text/javascript" defer data-plerdy_code='1'>
-    var _protocol="https:"==document.location.protocol?"https://":"http://";
-    _site_hash_code = "38b5a58e48b7db2488c2d80ad9d344cd",_suid=74715, plerdyScript=document.createElement("script");
-    plerdyScript.setAttribute("defer",""),plerdyScript.dataset.plerdymainscript="plerdymainscript",
-    plerdyScript.src="https://a.plerdy.com/public/js/click/main.js?v="+Math.random();
-    var plerdymainscript=document.querySelector("[data-plerdymainscript='plerdymainscript']");
-    plerdymainscript&&plerdymainscript.parentNode.removeChild(plerdymainscript);
-    try{document.head.appendChild(plerdyScript)}catch(t){console.log(t,"unable add script tag")}
-</script>
-<!-- END PLERDY CODE -->
-
-
+    <script src="/js/admin.js"></script>
 </body>
+
 </html>

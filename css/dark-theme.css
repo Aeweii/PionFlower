@@ -1,0 +1,664 @@
+body.dark-theme {
+    --bg-main: #1a1a2e;
+    --bg-card: #16213e;
+    --primary-rose: #2c2c3e;
+    --secondary-rose: #3d3d5e;
+    --accent-rose: #e94560;
+    --text-soft: #c4c4d4;
+    --text-dark: #e0e0e0;
+    --text-light: #8888aa;
+    --border-rose: #2c2c4e;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== ОСНОВНОЙ ФОН ==================== */
+body.dark-theme {
+    background-color: var(--bg-main);
+    color: var(--text-soft);
+}
+
+/* ==================== ШАПКА И НАВИГАЦИЯ ==================== */
+body.dark-theme .header {
+    background: rgba(26, 26, 46, 0.95);
+    border-bottom-color: var(--border-rose);
+    backdrop-filter: blur(10px);
+}
+
+body.dark-theme .nav-link {
+    color: var(--text-soft);
+}
+
+body.dark-theme .nav-link:hover,
+body.dark-theme .nav-link.active {
+    color: var(--accent-rose);
+    border-bottom-color: var(--accent-rose);
+}
+
+body.dark-theme .logo-text {
+    color: var(--text-dark);
+}
+
+body.dark-theme .logo-text span {
+    color: var(--text-light);
+}
+
+/* ==================== БУРГЕР-МЕНЮ И МОБИЛЬНОЕ МЕНЮ ==================== */
+body.dark-theme .burger-menu span {
+    background-color: var(--text-dark);
+}
+
+body.dark-theme .mobile-menu {
+    background-color: var(--bg-card);
+    border-bottom-color: var(--border-rose);
+}
+
+body.dark-theme .mobile-link {
+    color: var(--text-dark);
+    border-bottom-color: var(--border-rose);
+}
+
+body.dark-theme .mobile-link.active {
+    color: var(--accent-rose);
+}
+
+body.dark-theme .mobile-link:active {
+    background-color: var(--primary-rose);
+}
+
+/* ==================== КАРТОЧКИ И БЛОКИ ==================== */
+body.dark-theme .product-card,
+body.dark-theme .team-card,
+body.dark-theme .review-card,
+body.dark-theme .address-card,
+body.dark-theme .schedule-list,
+body.dark-theme .feedback-form,
+body.dark-theme .social-card,
+body.dark-theme .faq-item,
+body.dark-theme .info-block,
+body.dark-theme .calc-block,
+body.dark-theme .price-block,
+body.dark-theme .pickup-block,
+body.dark-theme .faq-block,
+body.dark-theme .catalog-promo-card,
+body.dark-theme .about-card,
+body.dark-theme .delivery-info,
+body.dark-theme .map-info,
+body.dark-theme .modal-content,
+body.dark-theme .quick-contact-card,
+body.dark-theme .team-slider-container,
+body.dark-theme .cart-summary {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+}
+
+body.dark-theme .product-card:hover,
+body.dark-theme .team-card:hover,
+body.dark-theme .review-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* ==================== ЗАГОЛОВКИ ==================== */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme .section-header h2,
+body.dark-theme .card-title,
+body.dark-theme .product-title {
+    color: var(--text-dark);
+}
+
+body.dark-theme .section-header p,
+body.dark-theme .card-description {
+    color: var(--text-light);
+}
+
+body.dark-theme h2:after {
+    background-color: var(--accent-rose);
+}
+
+/* ==================== КНОПКИ ==================== */
+body.dark-theme .btn-primary,
+body.dark-theme .btn,
+body.dark-theme .calc-btn,
+body.dark-theme .submit-btn,
+body.dark-theme .checkout-btn,
+body.dark-theme .btn-map,
+body.dark-theme .route-btn,
+body.dark-theme .btn-submit {
+    background-color: var(--accent-rose);
+    color: white;
+}
+
+body.dark-theme .btn-primary:hover,
+body.dark-theme .btn:hover,
+body.dark-theme .calc-btn:hover,
+body.dark-theme .submit-btn:hover,
+body.dark-theme .checkout-btn:hover,
+body.dark-theme .route-btn:hover {
+    background-color: #d43f5a;
+    transform: translateY(-2px);
+}
+
+body.dark-theme .btn-outline {
+    background-color: transparent;
+    border-color: var(--accent-rose);
+    color: var(--text-dark);
+}
+
+body.dark-theme .btn-outline:hover {
+    background-color: var(--accent-rose);
+    color: white;
+}
+
+/* ==================== ФОРМЫ И ПОЛЯ ВВОДА ==================== */
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select,
+body.dark-theme .calc-select,
+body.dark-theme .calc-input,
+body.dark-theme .catalog-search-input,
+body.dark-theme .delivery-select,
+body.dark-theme .sort-select,
+body.dark-theme .form-group input,
+body.dark-theme .form-group textarea {
+    background-color: var(--bg-main);
+    border-color: var(--border-rose);
+    color: var(--text-dark);
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+    color: var(--text-light);
+}
+
+body.dark-theme input:focus,
+body.dark-theme textarea:focus,
+body.dark-theme select:focus {
+    outline: none;
+    border-color: var(--accent-rose);
+    box-shadow: 0 0 0 2px rgba(233, 69, 96, 0.2);
+}
+
+/* ==================== ПРОФИЛЬ И ДРОПДАУН ==================== */
+body.dark-theme .profile-info {
+    background-color: var(--primary-rose);
+}
+
+body.dark-theme .profile-info:hover {
+    background-color: var(--accent-rose);
+}
+
+body.dark-theme .profile-name {
+    color: var(--text-dark);
+}
+
+body.dark-theme .profile-dropdown {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+}
+
+body.dark-theme .dropdown-item {
+    color: var(--text-dark);
+}
+
+body.dark-theme .dropdown-item:hover {
+    background-color: var(--primary-rose);
+}
+
+body.dark-theme .dropdown-divider {
+    background-color: var(--border-rose);
+}
+
+body.dark-theme .profile-avatar-btn {
+    background-color: var(--primary-rose);
+}
+
+body.dark-theme .profile-avatar-btn i {
+    color: var(--text-dark);
+}
+
+body.dark-theme .profile-avatar-btn:hover {
+    background-color: var(--accent-rose);
+}
+
+body.dark-theme .profile-avatar-btn:hover i {
+    color: white;
+}
+
+/* ==================== КОРЗИНА ==================== */
+body.dark-theme .cart-item {
+    border-bottom-color: var(--border-rose);
+}
+
+body.dark-theme .cart-item-name {
+    color: var(--text-dark);
+}
+
+body.dark-theme .cart-item-price {
+    color: var(--accent-rose);
+}
+
+body.dark-theme .cart-quantity-btn {
+    background-color: var(--primary-rose);
+    color: var(--text-dark);
+}
+
+body.dark-theme .cart-quantity-btn:hover {
+    background-color: var(--accent-rose);
+    color: white;
+}
+
+body.dark-theme .cart-remove-btn {
+    color: var(--text-light);
+}
+
+body.dark-theme .cart-remove-btn:hover {
+    color: #ff6b6b;
+}
+
+body.dark-theme .free-delivery-note {
+    background-color: #1a3a1a;
+    color: #81c784;
+}
+
+body.dark-theme .empty-cart-message i {
+    color: var(--text-light);
+}
+
+/* ==================== КАТАЛОГ ==================== */
+body.dark-theme .filter-btn {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+    color: var(--text-soft);
+}
+
+body.dark-theme .filter-btn:hover,
+body.dark-theme .filter-btn.active {
+    background-color: var(--accent-rose);
+    border-color: var(--accent-rose);
+    color: white;
+}
+
+body.dark-theme .favorite-btn {
+    background-color: var(--primary-rose);
+    color: var(--accent-rose);
+}
+
+body.dark-theme .favorite-btn.active {
+    background-color: var(--accent-rose);
+    color: white;
+}
+
+body.dark-theme .card-badge,
+body.dark-theme .product-badge,
+body.dark-theme .promo-sticker {
+    background-color: var(--accent-rose);
+    color: white;
+}
+
+body.dark-theme .pagination-btn {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+    color: var(--text-soft);
+}
+
+body.dark-theme .pagination-btn:hover,
+body.dark-theme .pagination-btn.active {
+    background-color: var(--accent-rose);
+    border-color: var(--accent-rose);
+    color: white;
+}
+
+/* ==================== СЛАЙДЕРЫ И КАРУСЕЛИ ==================== */
+body.dark-theme .slider-btn,
+body.dark-theme .carousel-btn {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+    color: var(--text-dark);
+}
+
+body.dark-theme .slider-btn:hover,
+body.dark-theme .carousel-btn:hover {
+    background-color: var(--accent-rose);
+    color: white;
+}
+
+body.dark-theme .slider-dot {
+    background-color: var(--border-rose);
+}
+
+body.dark-theme .slider-dot.active {
+    background-color: var(--accent-rose);
+}
+
+body.dark-theme .slider-dot:hover {
+    background-color: var(--accent-rose);
+}
+
+/* ==================== HERO БЛОК ==================== */
+body.dark-theme .hero-text h1,
+body.dark-theme .hero-text p {
+    color: white;
+}
+
+body.dark-theme .hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+body.dark-theme .hero-features span {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* ==================== ФУТЕР ==================== */
+body.dark-theme .footer {
+    background-color: #0f0f1a;
+    border-top-color: var(--border-rose);
+}
+
+body.dark-theme .footer-copyright {
+    color: var(--text-light);
+}
+
+body.dark-theme .footer-contacts a {
+    color: var(--text-soft);
+}
+
+body.dark-theme .footer-contacts a:hover {
+    color: var(--accent-rose);
+}
+
+body.dark-theme .footer-logo .logo-text {
+    color: var(--text-dark);
+}
+
+body.dark-theme .footer-logo .logo-icon {
+    background-color: var(--primary-rose);
+}
+
+/* ==================== МОДАЛЬНЫЕ ОКНА ==================== */
+body.dark-theme .modal {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-theme .modal-header {
+    background-color: var(--primary-rose);
+}
+
+body.dark-theme .modal-header h2,
+body.dark-theme .modal-header h3 {
+    color: var(--text-dark);
+}
+
+body.dark-theme .modal-close {
+    color: var(--text-dark);
+}
+
+body.dark-theme .modal-close:hover {
+    color: var(--accent-rose);
+}
+
+body.dark-theme .modal-hint {
+    color: var(--text-light);
+}
+
+/* ==================== УВЕДОМЛЕНИЯ ==================== */
+body.dark-theme .notification {
+    background-color: var(--bg-card);
+    color: var(--text-dark);
+}
+
+body.dark-theme .notification.success {
+    border-left-color: #4caf50;
+}
+
+body.dark-theme .notification.error {
+    border-left-color: #f44336;
+}
+
+body.dark-theme .notification.info {
+    border-left-color: #2196f3;
+}
+
+body.dark-theme .notification-close {
+    color: var(--text-light);
+}
+
+body.dark-theme .notification-close:hover {
+    color: var(--text-dark);
+}
+
+body.dark-theme .notifications-container {
+    z-index: 10001;
+}
+
+/* ==================== FAQ АККОРДЕОН ==================== */
+body.dark-theme .faq-question {
+    color: var(--text-dark);
+}
+
+body.dark-theme .faq-toggle {
+    background-color: var(--primary-rose);
+    color: var(--text-dark);
+}
+
+body.dark-theme .faq-toggle:hover {
+    background-color: var(--accent-rose);
+    color: white;
+}
+
+body.dark-theme .faq-answer {
+    color: var(--text-light);
+}
+
+/* ==================== СТРАНИЦА КОНТАКТОВ ==================== */
+body.dark-theme .page-header {
+    background: rgba(26, 26, 46, 0.95);
+}
+
+body.dark-theme .schedule-item {
+    border-bottom-color: var(--border-rose);
+}
+
+body.dark-theme .schedule-item.highlight {
+    background-color: var(--primary-rose);
+}
+
+body.dark-theme .schedule-day {
+    color: var(--text-dark);
+}
+
+body.dark-theme .schedule-time {
+    color: var(--accent-rose);
+}
+
+/* ==================== СТРАНИЦА ДОСТАВКИ ==================== */
+body.dark-theme .hero {
+    background: rgba(26, 26, 46, 0.95);
+}
+
+body.dark-theme .info-icon {
+    background-color: var(--primary-rose);
+}
+
+body.dark-theme .info-item h3 {
+    color: var(--text-dark);
+}
+
+body.dark-theme .price-row {
+    border-bottom-color: var(--border-rose);
+    color: var(--text-soft);
+}
+
+body.dark-theme .price-row.highlight {
+    color: var(--accent-rose);
+}
+
+body.dark-theme .calc-result {
+    background-color: var(--primary-rose);
+}
+
+body.dark-theme .calc-result .price {
+    color: var(--accent-rose);
+}
+
+body.dark-theme .calc-result .free {
+    color: #81c784;
+}
+
+/* ==================== АКЦИИ И ПРОМО-БЛОКИ ==================== */
+body.dark-theme .promo-featured {
+    background: linear-gradient(135deg, #1a1a2e, #2a2a3e);
+}
+
+body.dark-theme .promo-icon {
+    background-color: var(--primary-rose);
+}
+
+body.dark-theme .promo-icon i {
+    color: var(--accent-rose);
+}
+
+body.dark-theme .promo-info h3 {
+    color: var(--text-dark);
+}
+
+body.dark-theme .promo-info p {
+    color: var(--text-light);
+}
+
+body.dark-theme .promo-code span {
+    background-color: var(--primary-rose);
+    color: var(--accent-rose);
+}
+
+/* ==================== КАРТА ==================== */
+body.dark-theme .map-wrapper {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+}
+
+body.dark-theme .yandex-map {
+    filter: brightness(0.8) contrast(1.2);
+}
+
+/* ==================== КНОПКА ИЗБРАННОГО (product-detail) ==================== */
+body.dark-theme .favorite-corner-btn {
+    background: rgba(30, 30, 46, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .favorite-corner-btn:active {
+    transform: scale(0.92);
+}
+
+/* ==================== ПРОДУКТ (product-detail) ==================== */
+body.dark-theme .product-detail {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+}
+
+body.dark-theme .product-description {
+    border-bottom-color: var(--border-rose);
+}
+
+body.dark-theme .composition-list li {
+    background-color: var(--primary-rose);
+    color: var(--text-dark);
+}
+
+/* ==================== СКРОЛЛБАР ==================== */
+body.dark-theme ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.dark-theme ::-webkit-scrollbar-track {
+    background: var(--bg-main);
+    border-radius: 4px;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+    background: var(--border-rose);
+    border-radius: 4px;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-rose);
+}
+
+body.dark-theme .auth-modal-body {
+    background: var(--bg-main);
+}
+body.dark-theme .auth-tabs {
+    background: var(--bg-card);
+}
+body.dark-theme .continue-shopping-btn {
+    color: #ffff;
+}
+
+/* ==================== ТЁМНАЯ ТЕМА ДЛЯ ОТЗЫВОВ ==================== */
+body.dark-theme .reviews-list .review-card {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+}
+
+body.dark-theme .review-avatar {
+    background-color: var(--primary-rose);
+    color: var(--accent-rose);
+}
+
+body.dark-theme .review-name {
+    color: var(--text-dark);
+}
+
+body.dark-theme .review-date {
+    color: var(--text-light);
+}
+
+body.dark-theme .review-text {
+    color: var(--text-soft);
+}
+
+body.dark-theme .review-form-container {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+}
+
+body.dark-theme .review-form-container h3 {
+    color: var(--text-dark);
+}
+
+body.dark-theme .stars-input i {
+    color: #555;
+}
+
+body.dark-theme .stars-input i.fas,
+body.dark-theme .stars-input i:hover {
+    color: #ffb800;
+}
+
+body.dark-theme .empty-reviews {
+    background-color: var(--bg-card);
+    border-color: var(--border-rose);
+}
+
+body.dark-theme .empty-reviews p {
+    color: var(--text-light);
+}
+
+body.dark-theme .empty-reviews i {
+    color: var(--text-light);
+}
+/* ==================== АНИМАЦИЯ ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ==================== */
+body.dark-theme * {
+    transition: background-color 0.2s ease, 
+                border-color 0.2s ease, 
+                color 0.2s ease,
+                box-shadow 0.2s ease;
+}
